@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conestoga Merchandise Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <h1>Conestoga Merchandise - Admin Control</h1>
+    </header>
+
+    <main>
+        <!-- GET: Display merchandise items -->
+        <section class="panel">
+            <h2>Merchandise List (GET)</h2>
+            <button id="refresh-btn">Refresh List</button>
+            <div id="merchandise-list" class="merchandise-list"></div>
+        </section>
+
+        <!-- POST: Add a new item -->
+        <section class="panel">
+            <h2>Add a New Item (POST)</h2>
+            <form id="add-product-form">
+                <label for="post-name">Name:</label>
+                <input type="text" id="post-name" required />
+
+                <label for="post-description">Description:</label>
+                <input type="text" id="post-description" />
+
+                <label for="post-price">Price:</label>
+                <input type="number" step="0.01" id="post-price" required />
+
+                <label for="post-imageUrl">Image URL:</label>
+                <input type="text" id="post-imageUrl" />
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <!-- PUT: Update an existing item fully -->
+        <section class="panel">
+            <h2>Update an Existing Item (PUT)</h2>
+            <form id="put-product-form">
+                <label for="put-id">Item ID:</label>
+                <input type="number" id="put-id" required />
+
+                <label for="put-name">New Name:</label>
+                <input type="text" id="put-name" required />
+
+                <label for="put-description">New Description:</label>
+                <input type="text" id="put-description" />
+
+                <label for="put-price">New Price:</label>
+                <input type="number" step="0.01" id="put-price" required />
+
+                <label for="put-imageUrl">New Image URL:</label>
+                <input type="text" id="put-imageUrl" />
+
+                <button type="submit">Update Item</button>
+            </form>
+        </section>
+
+        <!-- PATCH: Partially update an item (e.g., price only) -->
+        <section class="panel">
+            <h2>Partially Update Price (PATCH)</h2>
+            <form id="patch-product-form">
+                <label for="patch-id">Item ID:</label>
+                <input type="number" id="patch-id" required />
+
+                <label for="patch-price">New Price:</label>
+                <input type="number" step="0.01" id="patch-price" required />
+
+                <button type="submit">Patch Price</button>
+            </form>
+        </section>
+
+        <!-- DELETE: Remove an item -->
+        <section class="panel">
+            <h2>Delete an Item (DELETE)</h2>
+            <form id="delete-product-form">
+                <label for="delete-id">Item ID:</label>
+                <input type="number" id="delete-id" required />
+                <button type="submit">Delete Item</button>
+            </form>
+        </section>
+
+        <!-- OPTIONS: Check allowed methods -->
+        <section class="panel">
+            <h2>Check Supported Methods (OPTIONS)</h2>
+            <button id="options-btn">Check Methods</button>
+            <p id="options-result"></p>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
